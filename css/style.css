@@ -78,8 +78,6 @@ body.fade-out {
     transform: scale(1.05); /* Aumenta ligeiramente o logo quando o mouse passar por cima */
 }
 
-
-
 /* Estilo para o hero vídeo */
 .hero-video {
 	margin-bottom: 40px;
@@ -197,7 +195,6 @@ body.fade-out {
     transform-origin: bottom left;
 }
 
-
 /* Estilos para o formulário de contato */
 .form-group {
     margin-bottom: 20px;  /* Adiciona espaçamento entre os grupos de campos */
@@ -240,6 +237,13 @@ form .form-control:focus {
 	box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
 }
 
+/* Efeito na feature section */
+.feature {
+	transition: all 0.3s ease;
+}
+.feature:hover {
+	transform: scale(1.05); /* Aumentando ligeiramente o botão */
+}
 
 /* Alterar o estilo dos ícones */
 .feature-icon {
