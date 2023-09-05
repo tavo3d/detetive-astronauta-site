@@ -240,3 +240,30 @@ form .form-control:focus {
 	box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
 }
 
+
+/* Alterar o estilo dos ícones */
+.feature-icon {
+	margin: 10px;
+}
+
+/* Alterar o estilo do carrossel */
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0);
+    width: 35px;
+    height: 35px;
+	/* nao interagir com mouse */
+	pointer-events: none;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
