@@ -17,6 +17,17 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+/* Definir a imagem do cursor para todo o site */
+body, * {
+    cursor: url('../media/cursor.png'), auto !important;
+}
+a, button, select {
+    cursor: url('../media/cursor-link.png'), pointer !important; /* 'pointer' é o cursor de mão padrão para links */
+}
+textarea, input {
+	cursor: url('../media/cursor-text.png'), text !important; /* 'text' é o cursor de texto padrão para campos de entrada */
+}
+
 
 body.fade-in {
     animation: fadeIn 0.3s forwards;
