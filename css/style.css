@@ -21,26 +21,143 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1; /* Ocupa todo o espaço disponível, empurrando o footer para baixo */
 }
 
-/* Adicionar margem na navbar */
-.navbar {
-	margin-top: 20px;
-	margin-bottom: 20px;
+
+/* Estilo para o logo */
+.navbar-brand {
+    display: flex;        /* Transforma o contêiner em um flexbox */
+    align-items: center;  /* Centraliza verticalmente os itens dentro */
+    justify-content: center; /* Centraliza horizontalmente os itens dentro */
+}
+.navbar-brand img {
+	/* Largura de 40% da largura da viewport */
+	/* Isso fará com que a imagem seja responsiva */
+	width: 70vw;
+	min-width: 100px;
+    max-width: 60%;
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+    margin: 0 auto;        /* Isso centralizará horizontalmente a imagem, se necessário */
+}
+.navbar-brand:hover img {
+    transform: scale(1.05); /* Aumenta ligeiramente o logo quando o mouse passar por cima */
 }
 
-/* Alterar cor do texto do logo */
+
+
+/* Estilo para o hero vídeo */
+.hero-video {
+	margin-bottom: 40px;
+}
+.hero-video video {
+    width: 90%; /* Definindo a largura do vídeo para 90% do contêiner pai */
+    border-radius: 15px; /* Borda arredondada */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil para efeito 3D */
+    transition: all 0.3s ease; /* Efeito de transição para mudanças de estilos */
+}
+.hero-video video:hover {
+    transform: scale(1.05); /* Aumentando ligeiramente o vídeo */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
+}
+
+
+/* Estilo básico para o botão */
+.btn-primary {
+    color: #fff;
+	padding: 10px 30px;
+	border-radius: 10px;
+    background: #000;
+    border: none;
+    overflow: hidden; /* esconde os pseudo-elementos fora dos limites */
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para efeito 3D */
+	position: relative;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+								rgb(0, 106, 255),
+                                rgb(141, 0, 169),
+                                rgb(255, 3, 234));
+    clip-path: circle(150% at 100% -10%);
+    transition: all 1s ease-out;
+	z-index: -1;
+}
+
+.btn-primary:hover::before {
+    clip-path: circle(150% at 0% -10%);
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 123, 255, 0.8); /* Cor de fundo um pouco mais clara no hover */
+    transform: translateY(-3px); /* Movendo ligeiramente para cima para dar um efeito de "levantamento" */
+	transform: scale(1.05); /* Aumentando ligeiramente o botão */
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
+}
+
+/* Adiciona um brilho neon ao redor do botão quando em hover */
+.btn-primary:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+
+
+/* Estilo para navbar */
+.navbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Adiciona transição para o efeito de "flutuação" */
+	flex-direction: column; /* Faz com que os itens da navbar sejam empilhados verticalmente */
+	align-items: center; /* Centraliza os itens horizontalmente */
+}
 .navbar .navbar-brand {
-	color: #fff;
+    color: #fff;
+    transition: color 0.3s ease; /* Suaviza a transição de cor */
+	margin-bottom: 1rem; /* Adiciona um pouco de espaço entre o logo e os links */
+}
+.navbar .navbar-nav {
+    flex-direction: row !important; /* Isso garante que os links sempre fiquem lado a lado */
+}
+.navbar .nav-item {
+    margin: 0 5px; /* Adiciona margens laterais para cada item */
 }
 .navbar .navbar-brand:hover {
-	color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
-
-/* Altera a cor dos links na navbar para branco */
 .navbar .navbar-nav .nav-link {
     color: #fff;
+    transition: color 0.3s ease, background 0.3s ease; /* Adiciona transição para cor e background */
+    padding: 5px 5px; /* Adiciona um pouco de padding para o efeito de sublinhado */
+	margin: 0px 10px;
+    position: relative; /* Permite o posicionamento de pseudo-elementos */
 }
-
-/* Adiciona uma transição suave para hover nos links da navbar */
+.navbar .navbar-nav .nav-link::after {
+    content: ""; /* Pseudo-elemento para sublinhado */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scaleX(0); /* Inicia com o sublinhado oculto */
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+.navbar .navbar-nav .nav-link.active::after {
+    transform: scaleX(1); /* Mostra o sublinhado */
+    transform-origin: bottom left;
+}
 .navbar .navbar-nav .nav-link:hover {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85); /* Aumenta ligeiramente a opacidade */
+}
+.navbar .navbar-nav .nav-link:hover::after {
+    transform: scaleX(1); /* Mostra o sublinhado ao passar o mouse */
+    transform-origin: bottom left;
 }
