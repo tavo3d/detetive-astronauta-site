@@ -17,10 +17,36 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+
+body.fade-in {
+    animation: fadeIn 0.3s forwards;
+}
+
+body.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .content-wrapper {
     flex: 1; /* Ocupa todo o espaço disponível, empurrando o footer para baixo */
 }
-
 
 /* Estilo para o logo */
 .navbar-brand {
@@ -107,8 +133,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-
-
 /* Estilo para navbar */
 .navbar {
     margin-top: 20px;
@@ -161,3 +185,47 @@ h1, h2, h3, h4, h5, h6 {
     transform: scaleX(1); /* Mostra o sublinhado ao passar o mouse */
     transform-origin: bottom left;
 }
+
+
+/* Estilos para o formulário de contato */
+.form-group {
+    margin-bottom: 20px;  /* Adiciona espaçamento entre os grupos de campos */
+}
+
+form label {
+    font-weight: bold;  /* Torna as etiquetas mais ousadas */
+    margin-bottom: 8px;  /* Adiciona um pequeno espaço entre a etiqueta e o campo de entrada */
+    display: block;  /* Garante que as etiquetas apareçam acima dos campos de entrada */
+    color: #ffffff;  /* Dá uma cor dourada para as etiquetas para um contraste agradável */
+}
+
+form input, form textarea {
+    padding: 12px;  /* Adiciona mais espaço dentro dos campos de entrada e área de texto */
+    border: 1px solid rgba(255,255,255,0.3);  /* Define uma borda sutil para os campos */
+    background-color: rgba(0, 0, 0, 0.4);  /* Adiciona uma cor de fundo ligeiramente transparente para os campos */
+    color: #fff;  /* Cor do texto branco para os campos */
+    transition: border-color 0.3s ease;  /* Adiciona uma transição suave ao foco */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #bb00ff;  /* Muda a cor da borda para dourado quando o campo está focado */
+    outline: none;  /* Remove o contorno padrão do navegador ao focar */
+}
+
+form .form-control {
+	background-color: rgba(0, 0, 0, 0.5);  /* Adiciona uma cor de fundo ligeiramente transparente para os campos */
+	color: #fff;  /* Cor do texto branco para os campos */
+}
+form .form-control:hover {
+	transform: scale(1.01); /* Aumentando ligeiramente o botão */
+	box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
+	transition: all 0.3s ease;
+}
+form .form-control:focus {
+	background-color: rgba(0, 0, 0, 0.5);  /* Adiciona uma cor de fundo ligeiramente transparente para os campos */
+	border-color: #bb00ff;  /* Muda a cor da borda para dourado quando o campo está focado */
+	outline: none;  /* Remove o contorno padrão do navegador ao focar */
+	color: rgb(223, 223, 223);/* Cor do texto branco para os campos */
+	box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3); /* Aumentando a sombra para dar mais profundidade */
+}
+
