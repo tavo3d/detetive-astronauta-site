@@ -1,0 +1,46 @@
+body {
+    color: white;
+    background-color: black;
+	background-image: url('../media/background.png');
+    background-size: cover;  /* Faz a imagem cobrir todo o elemento */
+    background-repeat: no-repeat;  /* Previne que a imagem se repita */
+    background-attachment: fixed;  /* Faz a imagem permanecer no lugar durante a rolagem */
+	background-position: center center;
+	height: 100vh; /* Define a altura do body para ser igual à altura da viewport */
+
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima do body será a altura da viewport */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+.content-wrapper {
+    flex: 1; /* Ocupa todo o espaço disponível, empurrando o footer para baixo */
+}
+
+/* Adicionar margem na navbar */
+.navbar {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Alterar cor do texto do logo */
+.navbar .navbar-brand {
+	color: #fff;
+}
+.navbar .navbar-brand:hover {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Altera a cor dos links na navbar para branco */
+.navbar .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Adiciona uma transição suave para hover nos links da navbar */
+.navbar .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
